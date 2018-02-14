@@ -1,12 +1,12 @@
 #  GRIMM: Graph IMputation and Matching for HLA Genotypes
 
-Graph-based imputation and matching, a.k.a. new imputation method (NIM).
+Graph-based imputation and matching
 
 | Subdirectory    | Description |
 | :-------------- | :---------- |
 | graph_generator | Python code to generate (haplotype frequency) CSV files which can be imported into Neo4j |
-| gl_impute       | old Python code for graph-based imputation.  Still needed for cypher queries (?) |
-| multi_race_ipute | Python code for graph-based imputation |
+| gl_impute       | Python code for graph-based imputation.  |
+| multi_race_impute | Python code for graph-based imputation |
 | validation      | Code for validation of components of this repository |
 
 # Walkthrough
