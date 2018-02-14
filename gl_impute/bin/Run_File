@@ -1,0 +1,16 @@
+from py2neo import Graph
+from impute import Imputation
+import inspect
+import os
+import json
+
+#fname='/home/yoram/gl_impute/don.missing-weps.txt'
+fname='mytest.txt'
+
+json_file = 'yoram.json'
+config_data = open(json_file).read()
+credentials = json.loads(config_data)
+
+graph = Graph(credentials["graph"], user=credentials["user"], password=credentials["password"])
+test=Imputation(graph)
+test.impute_file(fname)

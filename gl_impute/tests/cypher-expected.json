@@ -1,0 +1,40 @@
+{
+    "buildQuery": {
+        "A*01:01~B*08:01": "MATCH (ab)-[c1]-(abc:`ABC`)-[c2]-(abcq:`ABCQ`)-[c3]-(abcqr:`ABCQR`) WHERE ab.name IN [ \"A*01:01~B*08:01\" ] return abcqr.name,abcqr.frequency",
+        "A*01:01~B*08:01~DQB1*02:01": "MATCH (abq)-[c1]-(abcq:`ABCQ`)-[c2]-(abcqr:`ABCQR`) WHERE abq.name IN [ \"A*01:01~B*08:01~DQB1*02:01\" ] return abcqr.name,abcqr.frequency",
+        "A*01:01~B*08:01~C*07:01":"MATCH (abc)-[c1]-(abcq:`ABCQ`)-[c2]-(abcqr:`ABCQR`) WHERE abc.name IN [ \"A*01:01~B*08:01~C*07:01\" ] return abcqr.name,abcqr.frequency",
+        "A*01:01~C*07:01":"MATCH (ac)-[c1]-(abc:`ABC`)-[c2]-(abcq:`ABCQ`)-[c3]-(abcqr:`ABCQR`) WHERE ac.name IN [ \"A*01:01~C*07:01\" ] return abcqr.name,abcqr.frequency",
+        "B*08:01~DRB1*15:01~DQB1*02:01":"MATCH (bqr)-[c1]-(abqr:`ABQR`)-[c2]-(abcqr:`ABCQR`) WHERE bqr.name IN [ \"B*08:01~DRB1*15:01~DQB1*02:01\" ] return abcqr.name,abcqr.frequency",
+        "B*08:01":"MATCH (b)-[c1]-(ab:`AB`)-[c2]-(abc:`ABC`)-[c3]-(abcq:`ABCQ`)-[c4]-(abcqr:`ABCQR`) WHERE b.name IN [ \"B*08:01\" ] return abcqr.name,abcqr.frequency",
+        "DQB1*02:01":"MATCH (q)-[c1]-(aq:`AQ`)-[c2]-(abq:`ABQ`)-[c3]-(abcq:`ABCQ`)-[c4]-(abcqr:`ABCQR`) WHERE q.name IN [ \"DQB1*02:01\" ] return abcqr.name,abcqr.frequency",
+        "DRB1*15:01~DQB1*02:01":"MATCH (qr)-[c1]-(aqr:`AQR`)-[c2]-(abqr:`ABQR`)-[c3]-(abcqr:`ABCQR`) WHERE qr.name IN [ \"DRB1*15:01~DQB1*02:01\" ] return abcqr.name,abcqr.frequency"
+    },
+    "getLocus": {
+        "A*01:01": "A",
+        "B*05:01": "B",
+        "C*07:01": "C",
+        "DQB1*02:01": "Q",
+        "DRB1*15:01": "R"
+    },
+    "getMatch": {
+        "DRB1*15:01": "MATCH (r)",
+        "DQB1*02:01": "MATCH (q)",
+        "DRB1*15:01": "MATCH (r)",
+        "A*01:01": "MATCH (a)",
+        "A*01:01~B*08:01": "MATCH (ab)",
+        "A*01:01~B*08:01~C*07:01": "MATCH (abc)",
+        "B*08:01": "MATCH (b)",
+        "B*08:01~C*07:01": "MATCH (bc)",
+        "C*07:01": "MATCH (c)",
+        "C*07:01~DQB1*02:01": "MATCH (cq)",
+        "C*07:01~DRB1*15:01": "MATCH (cr)",
+        "C*07:01~DRB1*15:01~DQB1*02:01": "MATCH (cqr)"
+    },
+    "getPath": {
+        "A*01:01": "[c1]-(ab:`AB`)-[c2]-(abc:`ABC`)-[c3]-(abcq:`ABCQ`)-[c4]-(abcqr:`ABCQR`)",
+        "A*01:01~B*08:01": "[c1]-(abc:`ABC`)-[c2]-(abcq:`ABCQ`)-[c3]-(abcqr:`ABCQR`)",
+        "A*01:01~B*08:01~C*07:01": "[c1]-(abcq:`ABCQ`)-[c2]-(abcqr:`ABCQR`)",
+        "DRB1*15:01~DQB1*02:01":"[c1]-(aqr:`AQR`)-[c2]-(abqr:`ABQR`)-[c3]-(abcqr:`ABCQR`)",
+        "C*07:01~DRB1*15:01":"[c1]-(acr:`ACR`)-[c2]-(abcr:`ABCR`)-[c3]-(abcqr:`ABCQR`)"
+    }
+}
