@@ -1,3 +1,5 @@
+![doi 10.5281](https://zenodo.org/badge/doi/10.5281/zenodo.1248130.svg)
+
 #  GRIMM: Graph IMputation and Matching for HLA Genotypes
 
 Graph-based imputation and matching
