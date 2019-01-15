@@ -37,7 +37,7 @@ computes the results in a format that can be compared to ../graph_generator/data
 	source ~/perl5/perlbrew/etc/bashrc
 	```
 
-	Install the latest stable build of Perl
+	Install the latest stable build of Perl. This could take sometime.
 	
 	```
 	perlbrew init
@@ -66,48 +66,37 @@ computes the results in a format that can be compared to ../graph_generator/data
 Generate the CSV files for loading into Neo4J
 
 ```
-cd graph-imputation-match/matching/graph_generation/perl
+cd matching/graph_generation/perl
 mkdir -p output/graph
 time ./generate_matchgraph.pl
-./generate_matchgraph.pl  141.92s user 14.39s system 98% cpu 2:39.04 total
 ```
 
 Load the CSV files to Neo4J
 
 ```
 time ./bulk_load_neo4j.sh
-
-	./bulk_load_neo4j.sh  97.07s user 6.56s system 202% cpu 51.289 total
 ```
 
 Visit http://localhost:7474/browser/ to verify database is working.
 
-Run the matcher program from `graph-imputation-match/matching/search`.
+Run the matcher program from `grimm/matching/search`.
 
 ```
 cd ../../search
 mkdir -p output
 time ./match_results.pl
-
-	./match_results.pl  7447.10s user 61.19s system 98% cpu 2:07:09.69 total
-
 ```
 
-This produces a `mr.txt` file that holds the match results.
+This produces a `output/mr.txt` file that holds the match results.
 
 ```
 ls -lah output/mr.txt
-	-rw-r--r--  1 pbashyal  827464065   383M Aug 26 13:29 output/mr.txt
-
 ```
 
 Compare the results from the WMDA consensus results.
 
 ```
 time ./compare_results.pl
-
-	./compare_results.pl  293.36s user 351.14s system 78% cpu 13:37.46 total
-
 ```
 
 This will produce a `output/cmp.txt` file. This will list the difference in the Neo4J version versus Consensus rsults.
@@ -115,5 +104,11 @@ This will produce a `output/cmp.txt` file. This will list the difference in the 
 ```
 wc -l output/cmp.txt
        0 output/cmp.txt
+
+```
+
+This produces produce zero different comparisons for WMDA data.
+```
+0 output/cmp.txt
 
 ```
