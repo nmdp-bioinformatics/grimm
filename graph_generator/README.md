@@ -22,6 +22,7 @@
 		```
 
 	- Setup NEO4J_HOME
+            Point NEO4J_HOME to the root of the NEO4J directory.
 		```
 		export NEO4J_HOME=/usr/local/Cellar/neo4j/3.2.2/libexec
 		```
@@ -30,16 +31,28 @@
 
 - Clone the repository 
 	```
-	git clone https://github.com/nmdp-bioinformatics/graph-imputation-match`
-	cd graph-imputation-match
+	git clone https://github.com/nmdp-bioinformatics/grimm`
+	cd grimm
 	```
 
 - Setup Python3 virtual environment
-	```
-	virtualenv -p python3 venv
-	source venv/bin/activate 
-	pip install pandas
-	```
+  Make sure `virtualenv` is installed.
+    ```
+    pip3 install virtualenv
+    ```
+
+    Create Virtual Environment
+ 
+    ```
+    virtualenv -p python3 venv
+    source venv/bin/activate
+    ```
+ 
+    Install pandas library
+    ```
+    pip3 install pandas
+    ```
+
 
 - Download and prepare wmda data. Python script downloads reference wmda data and untars it in wmda directory
 	```
@@ -70,4 +83,4 @@
 	```
 
 - Login to Neo4j http://localhost:7474/
-	- Default username/password is neo4j/ontological
+	- Default *username/password* is *neo4j/ontological*

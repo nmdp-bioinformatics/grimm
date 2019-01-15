@@ -7,7 +7,7 @@ Make sure you've generated the graph db. See [Graph Generation](../graph_generat
 
 * Make sure the virtual environment is active.
 	```
-	cd graph-imputation-match
+	cd grimm
 	source venv/bin/activate
 	```
 
