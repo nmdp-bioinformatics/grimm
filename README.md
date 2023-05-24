@@ -2,6 +2,8 @@
 
 #  GRIMM: Graph IMputation and Matching for HLA Genotypes
 
+See publication [GRIMM: GRaph IMputation and matching for HLA genotypes](https://academic.oup.com/bioinformatics/article/35/18/3520/5303534)
+
 Graph-based imputation and matching
 
 | Subdirectory    | Description |
